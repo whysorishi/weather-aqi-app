@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecast</title>
+
+  <!-- External libs -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://momentjs.com/downloads/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button id="themeToggle">🌙</button>
+
+<div class="main">
+
+  <!-- LEFT PANEL -->
+  <div class="card left">
+    <h2>Weather Report</h2>
+
+    <div class="search">
+      <input id="city" placeholder="Search city">
+      <button id="searchBtn">🔍</button>
+    </div>
+
+    <h1 id="temp">--</h1>
+    <p id="place">--</p>
+    <p id="desc">--</p>
+
+    <div class="weather-stats">
+      <div class="stat">🌡 Feels Like<br><b id="feels">--</b></div>
+      <div class="stat">💧 Humidity<br><b id="humidity">--</b></div>
+      <div class="stat">🌬 Wind<br><b id="wind">--</b></div>
+      <div class="stat">👁 Visibility<br><b id="visibility">--</b></div>
+      <div class="stat">🌧 Precipitation<br><b id="precip">--</b></div>
+      <div class="stat">🌅 Sunrise<br><b id="sunrise">--</b></div>
+      <div class="stat">🌇 Sunset<br><b id="sunset">--</b></div>
+    </div>
+
+    <div id="aqiCard" class="aqi-card">
+      <div class="aqi-value" id="aqiValue">--</div>
+      <div id="aqiLabel">--</div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="card right">
+
+    <h3>Hourly Forecast</h3>
+    <div id="hourly" class="hourly"></div>
+
+    <h3>Daily Forecast</h3>
+    <div id="daily" class="daily"></div>
+
+    <h3>Temperature Trend</h3>
+    <canvas id="tempChart"></canvas>
+
+    <h3>AQI Components</h3>
+    <canvas id="aqiChart"></canvas>
+
+  </div>
+</div>
+
+<!-- JS -->
+<script src="./config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
